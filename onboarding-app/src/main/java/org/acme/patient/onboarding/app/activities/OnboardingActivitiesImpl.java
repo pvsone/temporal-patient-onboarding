@@ -1,14 +1,18 @@
-package org.acme.patient.onboarding.app;
+package org.acme.patient.onboarding.app.activities;
 
+import org.acme.patient.onboarding.app.utils.OnboardingServiceClient;
 import org.acme.patient.onboarding.model.Doctor;
 import org.acme.patient.onboarding.model.Hospital;
-import org.acme.patient.onboarding.utils.OnboardingServiceClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public class ServiceExecutorImpl implements ServiceExecutor {
+@Component
+public class OnboardingActivitiesImpl implements OnboardingActivities {
 
     private OnboardingServiceClient serviceClient;
 
-    public ServiceExecutorImpl(OnboardingServiceClient serviceClient) {
+    @Autowired
+    public OnboardingActivitiesImpl(OnboardingServiceClient serviceClient) {
         this.serviceClient = serviceClient;
     }
 
@@ -25,7 +29,7 @@ public class ServiceExecutorImpl implements ServiceExecutor {
     public Doctor assignDoctorToPatient(String condition) {
         Doctor doctor = serviceClient.assignDoctorToPatient(condition);
         // simulate some work...
-        sleep(5);
+        sleep(3);
         return doctor;
     }
 
@@ -33,20 +37,20 @@ public class ServiceExecutorImpl implements ServiceExecutor {
     public void notifyViaEmail(String email) {
         serviceClient.notifyPatient(email);
         // simulate some work...
-        sleep(5);
+        sleep(3);
     }
 
     @Override
     public void notifyViaText(String phone) {
         serviceClient.notifyPatient(phone);
         // simulate some work...
-        sleep(5);
+        sleep(3);
     }
 
     @Override
     public String finalizeOnboarding() {
         // simulate some work...
-        sleep(5);
+        sleep(3);
         return "yes";
     }
 

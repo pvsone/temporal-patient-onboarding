@@ -1,7 +1,3 @@
 package org.acme.patient.onboarding.model;
 
-public enum ContactMethod {
-    PHONE,
-    TEXT;
-
-}
+public enum ContactMethod {PHONE, TEXT}
