@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8"/>
     <title>Temporal - Patient Onboarding Demo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/wingcss/0.1.8/wing.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/wingcss/0.1.8/wing.min.css" rel="stylesheet"/>
     <!-- Load AngularJS -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
         .float-container {
@@ -141,24 +141,26 @@
             <h3>Enter new patient info:</h3>
             <form ng-submit="add()">
                 <div class="row">
-                    <div class="col-6"><input type="text" placeholder="Patient Name" ng-model="form.name" size="30"/></div>
+                    <div class="col-6"><input ng-model="form.name" placeholder="Patient Name" size="30" type="text"/>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-6"><input type="text" placeholder="Zip" ng-model="form.zip" size="30"/></div>
+                    <div class="col-6"><input ng-model="form.zip" placeholder="Zip" size="30" type="text"/></div>
                 </div>
                 <div class="row">
-                    <div class="col-6"><input type="text" placeholder="Condition" ng-model="form.condition" size="30"/></div>
+                    <div class="col-6"><input ng-model="form.condition" placeholder="Condition" size="30" type="text"/>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-6"><input type="text" placeholder="Email" ng-model="form.email" size="30"/></div>
+                    <div class="col-6"><input ng-model="form.email" placeholder="Email" size="30" type="text"/></div>
                 </div>
                 <div class="row">
-                    <div class="col-6"><input type="text" placeholder="Cell" ng-model="form.phone" size="30"/></div>
+                    <div class="col-6"><input ng-model="form.phone" placeholder="Cell" size="30" type="text"/></div>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <select ng-model="form.contactmethod">
-                            <option value="" [selected]="isSelected">Preferred contact method</option>
+                            <option [selected]="isSelected" value="">Preferred contact method</option>
                             <option value="PHONE">Phone</option>
                             <option value="TEXT">Text</option>
                         </select>
