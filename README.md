@@ -50,14 +50,14 @@ Start `onboarding-service`:
 
 ```shell script
 cd onboarding-service
-mvn clean install quarkus:dev
+mvn clean spring-boot:run
 ```
 
 Start `onboarding-app`:
 
 ```shell script
 cd onboarding-app
-mvn clean install quarkus:dev
+mvn -Dmaven.test.skip clean spring-boot:run
 ```
 
 5. Access the demo service Swagger UI via: [http://localhost:8090/q/swagger-ui/](http://localhost:8090/q/swagger-ui/)
