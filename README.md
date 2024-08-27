@@ -64,7 +64,7 @@ mvn -Dmaven.test.skip clean spring-boot:run
 
 5. Access the demo UI in browser via: [http://localhost:8080](http://localhost:8080)
 
-6Access the Temporal Web-Ui via: [http://localhost:8233](http://localhost:8233)
+6. Access the Temporal Web-Ui via: [http://localhost:8233](http://localhost:8233)
 
 ## Interacting with the demo
 
