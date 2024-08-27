@@ -2,7 +2,7 @@ server:
   port: 8080
 
 onboarding:
-  task-queue: OnboardingTaskQueue
+  task-queue: OnboardingTaskQueue-${HOSTNAME}
   service:
     address: http://localhost:8090
 
@@ -12,8 +12,9 @@ spring:
       namespace: default
       target: localhost:7233
     workers:
-      - task-queue: ${onboarding.task-queue}
-        workflow-classes:
-          - org.acme.patient.onboarding.app.workflows.OnboardingWorkflowImpl
-        activity-beans:
-          - onboardingActivitiesImpl
+      - name: onboarding-worker
+        task-queue: ${onboarding.task-queue}
+    workersAutoDiscovery:
+      packages:
+        - org.acme.patient.onboarding.app.workflows
+        - org.acme.patient.onboarding.app.activities

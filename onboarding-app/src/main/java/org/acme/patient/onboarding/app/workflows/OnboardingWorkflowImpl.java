@@ -1,9 +1,11 @@
 package org.acme.patient.onboarding.app.workflows;
 
+import io.temporal.spring.boot.WorkflowImpl;
 import org.acme.patient.onboarding.app.activities.OnboardingActivities;
 import org.acme.patient.onboarding.app.utils.ActivityStubUtils;
 import org.acme.patient.onboarding.model.Patient;
 
+@WorkflowImpl(workers = "onboarding-worker")
 public class OnboardingWorkflowImpl implements OnboardingWorkflow {
 
     private final OnboardingActivities activities = ActivityStubUtils.getActivitiesStub();

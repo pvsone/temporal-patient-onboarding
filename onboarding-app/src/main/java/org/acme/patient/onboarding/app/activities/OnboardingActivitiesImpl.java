@@ -1,5 +1,6 @@
 package org.acme.patient.onboarding.app.activities;
 
+import io.temporal.spring.boot.ActivityImpl;
 import org.acme.patient.onboarding.app.utils.OnboardingServiceClient;
 import org.acme.patient.onboarding.model.Doctor;
 import org.acme.patient.onboarding.model.Hospital;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@ActivityImpl(workers = "onboarding-worker")
 public class OnboardingActivitiesImpl implements OnboardingActivities {
 
     private OnboardingServiceClient serviceClient;
