@@ -1,6 +1,6 @@
 # Temporal Demo: new patient onboarding
 
-Shows Temporal workflow execution running on [Quarkus](https://quarkus.io/).
+Shows Temporal workflow execution running on Spring Boot.
 Uses the [Temporal Java SDK](https://github.com/temporalio/sdk-java).
 
 ## Note
@@ -50,23 +50,19 @@ Start `onboarding-service`:
 
 ```shell script
 cd onboarding-service
-mvn clean install quarkus:dev
+mvn clean spring-boot:run
 ```
 
 Start `onboarding-app`:
 
 ```shell script
 cd onboarding-app
-mvn clean install quarkus:dev
+mvn -Dmaven.test.skip clean spring-boot:run
 ```
 
-5. Access the demo service Swagger UI via: [http://localhost:8090/q/swagger-ui/](http://localhost:8090/q/swagger-ui/)
+5. Access the demo UI in browser via: [http://localhost:8080](http://localhost:8080)
 
-6. Access the demo app Swagger UI via: [http://localhost:8080/q/swagger-ui/](http://localhost:8080/q/swagger-ui/)
-
-7. Access the demo UI in browser via: [http://localhost:8080](http://localhost:8080)
-
-8. Access the Temporal Web-Ui via: [http://localhost:8233](http://localhost:8233)
+6Access the Temporal Web-Ui via: [http://localhost:8233](http://localhost:8233)
 
 ## Interacting with the demo
 
